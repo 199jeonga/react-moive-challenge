@@ -19,7 +19,6 @@ function Movie() {
       await fetch(`https://yts.mx/api/v2/movie_suggestions.json?movie_id=${id}`)
     ).json();
     setSuggest(json.data.movies);
-    console.log(json.data.movies);
   };
   useEffect(() => {
     movieInfoResponse();
@@ -41,14 +40,17 @@ function Movie() {
             gen={movieInfo.genres}
             bgImg={movieInfo.background_image}
           />
-          {suggest.map((item, index) => (
-            <MovieSuggest
-              key={index}
-              url={suggest.url}
-              title={suggest.title}
-              img={suggest.medium_cover_image}
-            />
-          ))}
+          <div>
+            <h3>비슷한 장르의 영화 추천</h3>
+            {suggest.map((item, index) => (
+              <MovieSuggest
+                key={index}
+                url={item.url}
+                title={item.title}
+                img={item.medium_cover_image}
+              />
+            ))}
+          </div>
         </div>
       )}
     </div>
