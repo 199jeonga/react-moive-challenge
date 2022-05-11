@@ -1,40 +1,43 @@
-import Movie from "../components/Movie";
-import { useEffect, useState } from "react";
-
+import { useState, useEffect } from "react";
+import HomeDetail from "../components/HomeDetail.js";
 function Home() {
   const [loading, setLoading] = useState(true);
-  const [movies, setMovies] = useState([]);
-  const getMovies = async () => {
-    const response = await fetch(
-      `https://yts.mx/api/v2/list_movies.json?minimum_rating=8.5&sort_by=year`
-    );
-    const json = await response.json();
-    setMovies(json.data.movies);
+  const [movieData, setMovieData] = useState([]);
+  const response = async () => {
+    const json = await (
+      await fetch(
+        `https://yts.mx/api/v2/list_movies.json?order_by=asc&minimum_rating=5&sort_by=year`
+      )
+    ).json();
+    setMovieData(json.data.movies);
     setLoading(false);
+    console.log(json.data.movies);
   };
   useEffect(() => {
-    getMovies();
+    response();
   }, []);
   return (
     <div>
       {loading ? (
-        <h1>Loading...</h1>
+        <div>loading....!</div>
       ) : (
         <div>
-          {movies.map((movie) => (
-            <Movie
-              key={movie.id}
-              id={movie.id}
-              medium_cover_image={movie.medium_cover_image}
-              title={movie.title}
-              summary={movie.summary}
-              genres={movie.genres}
-            />
-          ))}
+          <h1>movie list</h1>
+          <div>
+            {movieData.map((item) => (
+              <HomeDetail
+                key={item.id}
+                id={item.id}
+                title={item.title}
+                language={item.language}
+                summary={item.summary}
+                img={item.medium_cover_image}
+              />
+            ))}
+          </div>
         </div>
       )}
     </div>
   );
 }
-
 export default Home;
