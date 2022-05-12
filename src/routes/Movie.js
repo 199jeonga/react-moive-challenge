@@ -1,7 +1,9 @@
+import styled from "styled-components";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import MovieDetail from "../components/MovieDetail";
 import MovieSuggest from "../components/MovieSuggest";
+import Loading from "../components/Loading";
 function Movie() {
   const [loading, setLoading] = useState(true);
   const [movieInfo, setMovieInfo] = useState([]);
@@ -27,7 +29,7 @@ function Movie() {
   return (
     <div>
       {loading ? (
-        <div>Movie!!!!!!!! Detail@@@ loading~!~!!!!!</div>
+        <Loading />
       ) : (
         <div>
           <MovieDetail
@@ -56,5 +58,8 @@ function Movie() {
     </div>
   );
 }
-
+const MovieDiv = styled.div`
+  width: 100%;
+  height: 100%;
+`;
 export default Movie;
