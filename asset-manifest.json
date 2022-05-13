@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/developerStudy__code/static/css/main.abd64e84.css",
-    "main.js": "/developerStudy__code/static/js/main.db76b70f.js",
-    "index.html": "/developerStudy__code/index.html",
-    "main.abd64e84.css.map": "/developerStudy__code/static/css/main.abd64e84.css.map",
-    "main.db76b70f.js.map": "/developerStudy__code/static/js/main.db76b70f.js.map"
+    "main.css": "/react-moive-challenge/static/css/main.abd64e84.css",
+    "main.js": "/react-moive-challenge/static/js/main.0839c29e.js",
+    "index.html": "/react-moive-challenge/index.html",
+    "main.abd64e84.css.map": "/react-moive-challenge/static/css/main.abd64e84.css.map",
+    "main.0839c29e.js.map": "/react-moive-challenge/static/js/main.0839c29e.js.map"
   },
   "entrypoints": [
     "static/css/main.abd64e84.css",
-    "static/js/main.db76b70f.js"
+    "static/js/main.0839c29e.js"
   ]
 }
