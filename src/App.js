@@ -10,9 +10,15 @@ function App() {
     <BrowserRouter>
       <GlobalStyles />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/movie" element={<MovieHome />} />
-        <Route path="/movie/:id" element={<Movie />} />
+        <Route path={process.env.PUBLIC_URL + "/"} element={<Home />} />
+        <Route
+          path={process.env.PUBLIC_URL + "/movie"}
+          element={<MovieHome />}
+        />
+        <Route
+          path={process.env.PUBLIC_URL + "/movie/:id"}
+          element={<Movie />}
+        />
       </Routes>
     </BrowserRouter>
   );
