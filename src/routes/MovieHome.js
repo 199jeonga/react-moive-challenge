@@ -38,7 +38,7 @@ function MovieHome() {
               />
             ))}
           </MovieDetailDiv>
-          <Button url="/" text="시작화면으로 가기" />
+          <Button url={`${process.env.PUBLIC_URL}/`} text="시작화면으로 가기" />
         </div>
       )}
     </MovieHomeDiv>

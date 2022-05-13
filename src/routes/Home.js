@@ -5,7 +5,10 @@ function Home() {
   return (
     <HomeDiv>
       <HomeLoading />
-      <Button url="/movie" text="영화추천 받으러 가기 !" />
+      <Button
+        url={`${process.env.PUBLIC_URL}/movie`}
+        text="영화추천 받으러 가기 !"
+      />
     </HomeDiv>
   );
 }

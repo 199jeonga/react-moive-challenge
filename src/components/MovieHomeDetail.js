@@ -4,7 +4,7 @@ import styled from "styled-components";
 function MovieHomeDetail({ id, title, language, summary, img, bgImg }) {
   return (
     <Card>
-      <Link to={`/movie/${id}`}>
+      <Link to={`${process.env.PUBLIC_URL}/movie/${id}`}>
         <Img src={img} alt={title} />
       </Link>
       <Ul>
