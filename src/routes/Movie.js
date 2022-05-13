@@ -60,7 +60,7 @@ function Movie() {
             </div>
           </MovieWrap>
           <Button url="/movie" text="목록으로 가기" />
-          <Button url="/" text="홈으로 가기" />
+          <Button url="/" text="시작화면으로 가기" />
         </MovieDiv>
       )}
     </div>

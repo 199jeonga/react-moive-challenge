@@ -25,15 +25,19 @@ const Card = styled.div`
   ${(props) => props.theme.box}
   @media ${(props) => props.theme.mobile} {
     width: 100%;
+    min-width: 320px;
     height: auto;
+    min-height: 300px;
     margin: 40px 0;
     ${(props) => props.theme.center}
   }
   @media ${(props) => props.theme.tablet} {
     width: 100%;
+    min-width: 560px;
   }
   @media ${(props) => props.theme.laptop} {
     width: 45%;
+    min-width: 450px;
   }
 `;
 const Img = styled.img`
@@ -45,10 +49,10 @@ const Img = styled.img`
   ${(props) => props.theme.box}
   @media ${(props) => props.theme.mobile} {
     width: 140px;
+    float: none;
   }
   @media ${(props) => props.theme.tablet} {
     width: 180px;
-    height: auto;
   }
   &:hover,
   &:focus {

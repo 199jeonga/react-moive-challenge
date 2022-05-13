@@ -30,7 +30,7 @@ const DetailDiv = styled.div`
   height: auto;
   padding-top: 420px;
   @media ${(props) => props.theme.mobile} {
-    padding-top: 350px;
+    padding-top: 110%;
   }
 `;
 const Img = styled.img`

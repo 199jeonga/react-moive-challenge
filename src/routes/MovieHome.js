@@ -61,6 +61,7 @@ const MovieDetailDiv = styled.div`
   }
   @media ${(props) => props.theme.tablet} {
     width: 90%;
+    min-width: 500px;
     max-width: 680px;
   }
   @media ${(props) => props.theme.laptop} {

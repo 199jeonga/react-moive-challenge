@@ -22,6 +22,6 @@ const Span = styled.span`
   font-family: "SDSamliphopangche_Outline";
   color: ${(props) => props.theme.color_navy};
   text-align: center;
-  animation: ${translate} 3500ms 1s infinite;
+  animation: ${translate} 3500ms 0s infinite;
 `;
 export default HomeLoading;
