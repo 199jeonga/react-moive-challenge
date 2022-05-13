@@ -20,12 +20,12 @@ function MovieHome() {
     response();
   }, []);
   return (
-    <div>
+    <MovieHomeDiv>
       {loading ? (
         <Loading />
       ) : (
         <div>
-          <div>
+          <MovieDetailDiv>
             {movieData.map((item) => (
               <MovieHomeDetail
                 key={item.id}
@@ -36,10 +36,23 @@ function MovieHome() {
                 img={item.medium_cover_image}
               />
             ))}
-          </div>
+          </MovieDetailDiv>
         </div>
       )}
-    </div>
+    </MovieHomeDiv>
   );
 }
+const MovieHomeDiv = styled.div`
+  width: 100%;
+  height: auto;
+  padding: 40px 0;
+`;
+const MovieDetailDiv = styled.div`
+  width: 96%;
+  max-width: 1100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  ${(props) => props.theme.center}
+`;
 export default MovieHome;

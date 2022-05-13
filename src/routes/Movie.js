@@ -31,35 +31,57 @@ function Movie() {
       {loading ? (
         <Loading />
       ) : (
-        <div>
-          <MovieDetail
-            img={movieInfo.large_cover_image}
-            title={movieInfo.title}
-            year={movieInfo.year}
-            lang={movieInfo.language}
-            rating={movieInfo.rating}
-            summary={movieInfo.description_full}
-            gen={movieInfo.genres}
-            bgImg={movieInfo.background_image}
-          />
-          <div>
-            <h3>비슷한 장르의 영화 추천</h3>
-            {suggest.map((item, index) => (
-              <MovieSuggest
-                key={index}
-                url={item.url}
-                title={item.title}
-                img={item.medium_cover_image}
-              />
-            ))}
-          </div>
-        </div>
+        <MovieDiv
+          style={{ backgroundImage: `url( ${movieInfo.background_image} )` }}
+        >
+          <MovieWrap>
+            <MovieDetail
+              img={movieInfo.large_cover_image}
+              title={movieInfo.title}
+              year={movieInfo.year}
+              lang={movieInfo.language}
+              rating={movieInfo.rating}
+              summary={movieInfo.description_full}
+              gen={movieInfo.genres}
+            />
+            <div>
+              <h3>비슷한 장르의 영화 추천</h3>
+              <MovieSugUl>
+                {suggest.map((item, index) => (
+                  <MovieSuggest
+                    key={index}
+                    url={item.url}
+                    title={item.title}
+                    img={item.medium_cover_image}
+                  />
+                ))}
+              </MovieSugUl>
+            </div>
+          </MovieWrap>
+        </MovieDiv>
       )}
     </div>
   );
 }
 const MovieDiv = styled.div`
   width: 100%;
-  height: 100%;
+  height: auto;
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding-top: 25%;
+  margin-bottom: 50px;
+`;
+const MovieWrap = styled.div`
+  width: 80%;
+  height: auto;
+  background-color: ${(props) => props.theme.color_navy};
+  ${(props) => props.theme.box};
+  ${(props) => props.theme.center};
+  padding-bottom: 40px;
+`;
+const MovieSugUl = styled.ul`
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
 `;
 export default Movie;
