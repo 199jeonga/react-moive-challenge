@@ -5,12 +5,19 @@ function MovieSuggest({ url, title, img }) {
       <a href={url}>
         <Img src={img} />
       </a>
-      <Title>{title}</Title>
+      <Title>
+        <span>{title}</span>
+      </Title>
     </MovieSugDiv>
   );
 }
 const MovieSugDiv = styled.li`
   width: 20%;
+  height: auto;
+  @media ${(props) => props.theme.mobile} {
+    width: 40%;
+    margin-bottom: 40px;
+  }
 `;
 const Img = styled.img`
   display: block;

@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import MovieDetail from "../components/MovieDetail";
 import MovieSuggest from "../components/MovieSuggest";
 import Loading from "../components/Loading";
+import Button from "../components/Button";
 function Movie() {
   const [loading, setLoading] = useState(true);
   const [movieInfo, setMovieInfo] = useState([]);
@@ -58,6 +59,8 @@ function Movie() {
               </MovieSugUl>
             </div>
           </MovieWrap>
+          <Button url="/movie" text="목록으로 가기" />
+          <Button url="/" text="홈으로 가기" />
         </MovieDiv>
       )}
     </div>
@@ -72,16 +75,22 @@ const MovieDiv = styled.div`
   margin-bottom: 50px;
 `;
 const MovieWrap = styled.div`
-  width: 80%;
+  width: 90%;
   height: auto;
   background-color: ${(props) => props.theme.color_navy};
   ${(props) => props.theme.box};
   ${(props) => props.theme.center};
   padding-bottom: 40px;
+  @media ${(props) => props.theme.laptop} {
+    width: 80%;
+  }
 `;
 const MovieSugUl = styled.ul`
   width: 100%;
   display: flex;
   justify-content: space-around;
+  @media ${(props) => props.theme.mobile} {
+    flex-wrap: wrap;
+  }
 `;
 export default Movie;

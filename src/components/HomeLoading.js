@@ -1,7 +1,19 @@
 import styled, { keyframes } from "styled-components";
+
 function HomeLoading() {
   return <Span>We recommend the best movies to you!</Span>;
 }
+const translate = keyframes`
+  0%{
+    opacity: 0;
+  }
+  50%{
+  opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+`;
 const Span = styled.span`
   display: block;
   width: 100%;
@@ -9,16 +21,7 @@ const Span = styled.span`
   font-size: 40px;
   font-family: "SDSamliphopangche_Outline";
   color: ${(props) => props.theme.color_navy};
-  background-color: #fff;
   text-align: center;
-  animation: ${translate} 500ms linear infinite;
-`;
-const translate = keyframes`
-  from{
-    display: none;
-  }
-  to{
-    display: block;
-  }
+  animation: ${translate} 3500ms 1s infinite;
 `;
 export default HomeLoading;

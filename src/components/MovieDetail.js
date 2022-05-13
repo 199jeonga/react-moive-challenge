@@ -4,18 +4,22 @@ function MovieDetail({ img, title, year, lang, rating, summary, gen, bgImg }) {
     <DetailDiv>
       <Img src={img} />
       <Dl>
-        <dt>{title}</dt>
-        <dd>
+        <Dt>
+          <span>{title}</span>
+        </Dt>
+        <Dd>
           <span>{year}</span>
           <span>{lang}</span>
           <span>⭐️ : {rating}</span>
-        </dd>
+        </Dd>
         <p>{summary}</p>
-        <ul>
+        <Ul>
           {gen.map((item, index) => (
-            <li key={index}>{item}</li>
+            <li key={index}>
+              <span>{item}</span>
+            </li>
           ))}
-        </ul>
+        </Ul>
       </Dl>
     </DetailDiv>
   );
@@ -25,6 +29,9 @@ const DetailDiv = styled.div`
   width: 100%;
   height: auto;
   padding-top: 420px;
+  @media ${(props) => props.theme.mobile} {
+    padding-top: 350px;
+  }
 `;
 const Img = styled.img`
   position: absolute;
@@ -33,26 +40,41 @@ const Img = styled.img`
   height: 550px;
   ${(props) => props.theme.box};
   ${(props) => props.theme.center};
+  @media ${(props) => props.theme.mobile} {
+    top: -50px;
+    width: 80%;
+    height: auto;
+  }
 `;
 const Dl = styled.dl`
-  width: 900px;
+  width: 90%;
   height: auto;
   margin: 50px 0;
   ${(props) => props.theme.center};
-
-  dt {
-    font-size: 30px;
-    text-align: center;
-    margin-bottom: 20px;
-    color: ${(props) => props.theme.color_yellow};
+  p {
+    font-size: 18px;
+    line-height: 26px;
+    margin: 60px 0;
+    color: ${(props) => props.theme.color_white};
   }
-  dd {
-    display: flex;
-    justify-content: space-between;
-    width: 300px;
-    height: auto;
-    ${(props) => props.theme.center};
+`;
+const Dt = styled.dt`
+  font-size: 30px;
+  text-align: center;
+  line-height: 30px;
+  margin-bottom: 30px;
+  color: ${(props) => props.theme.color_yellow};
+  word-break: break-all;
+  span {
+    font-family: "LeferiPoint-BlackA";
   }
+`;
+const Dd = styled.dd`
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+  height: auto;
+  ${(props) => props.theme.center};
   span {
     width: 80px;
     height: 22px;
@@ -61,28 +83,26 @@ const Dl = styled.dl`
     ${(props) => props.theme.box}
     background-color: ${(props) => props.theme.color_yellow};
     color: ${(props) => props.theme.color_navy};
-    font-weight: 700;
   }
-  p {
-    font-size: 18px;
-    line-height: 26px;
-    margin: 60px 0;
-    color: ${(props) => props.theme.color_white};
+`;
+const Ul = styled.ul`
+  width: 500px;
+  height: auto;
+  display: flex;
+  justify-content: space-evenly;
+  ${(props) => props.theme.center};
+  margin-bottom: 140px;
+  @media ${(props) => props.theme.mobile} {
+    width: 100%;
+    flex-wrap: wrap;
   }
-  ul {
-    width: 500px;
+  li {
+    width: auto;
     height: auto;
-    display: flex;
-    justify-content: space-evenly;
-    ${(props) => props.theme.center};
-    margin-bottom: 140px;
-
-    li {
-      width: auto;
-      height: auto;
+    span {
+      font-family: "LeferiPoint-BlackA";
       color: ${(props) => props.theme.color_white};
       text-align: center;
-      font-weight: 700;
     }
   }
 `;

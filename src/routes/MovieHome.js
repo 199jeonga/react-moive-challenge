@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import styled from "styled-components";
 import MovieHomeDetail from "../components/MovieHomeDetail";
 import Loading from "../components/Loading";
+import Button from "../components/Button";
 
 function MovieHome() {
   const [loading, setLoading] = useState(true);
@@ -37,6 +38,7 @@ function MovieHome() {
               />
             ))}
           </MovieDetailDiv>
+          <Button url="/" text="시작화면으로 가기" />
         </div>
       )}
     </MovieHomeDiv>
@@ -48,11 +50,22 @@ const MovieHomeDiv = styled.div`
   padding: 40px 0;
 `;
 const MovieDetailDiv = styled.div`
-  width: 96%;
-  max-width: 1100px;
+  height: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   ${(props) => props.theme.center}
+  @media ${(props) => props.theme.mobile} {
+    display: block;
+    width: 80%;
+  }
+  @media ${(props) => props.theme.tablet} {
+    width: 90%;
+    max-width: 680px;
+  }
+  @media ${(props) => props.theme.laptop} {
+    width: 96%;
+    max-width: 1100px;
+  }
 `;
 export default MovieHome;
