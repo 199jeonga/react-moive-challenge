@@ -16,7 +16,15 @@
 - 버튼 재사용이 가능하도록 버튼을 컴포넌트로 제작하여 props를 통해 재사용
 
 🌱 **스킬 및 사용툴** : `GIT` `VSCODE` `Styled-component` `React`
+<br />
 
+<p align='center'>
+    <img src="https://img.shields.io/badge/React-^18.1.0-blue?logo=React"/>
+    <img src="https://img.shields.io/badge/node.js-v17.5.0-green?logo=Node.js"/>
+    <img src="https://img.shields.io/badge/react_dom-^18.1.0-blueviolet?logo=ReactOS"/>
+    <img src="https://img.shields.io/badge/react_router_dom-^6.3.0-critical?logo=React Table"/>
+    <img src="https://img.shields.io/badge/styled--components-v4.3.4-orange"/>
+</p>
 📚 **보완해야 할 점** :
 
 - ThemeProvider 사용이 미숙해 매개변수를 입력하는 함수 사용을 실패했다. 반복적인 코드의 양을 줄이기 위해 추후에는 props에 프로퍼티 키를 입력하여 값을 빼내는 theme 뿐만이 아닌, 매개변수를 입력하여 함수로 사용할 수 있게 해야 함.
